@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        #myDiv {
+            width:400px;
+            height:200px;
+            background-color: orange;
+            padding-top:70px;
+            margin:20px;
+        }
+
+        #myDiv2 {
+            width:400px;
+            height:200px;
+            background-color:orange;
+            padding-top:70px;
+            margin:20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="myDiv">
+        <p id="myP">How much wood would a woodchuck chuck if a wood chuck could chuck wood?</p>
+    </div>
+
+    <div id="myDiv2">
+        <p id="myP2">How much wood would a woodchuck chuck if a wood chuck could chuck wood?</p>
+    </div>
+
+    <script>
+
+        /* Event Listeners */
+
+// Syntax: element.addEventLister(event, function, useCapture);
+var myP = document.getElementById("myP");
+var myDiv = document.getElementById("myDiv");
+var myP2 = document.getElementById("myP2");
+var myDiv2 = document.getElementById("myDiv2");
+
+
+myP.addEventListener("click", function(){ myDiv.style.background = "lightblue" });
+//OR use onclick, but always use addEventLister.
+// myP.onclick = function(){ myDiv.style.background = "lightblue" };
+
+myP.addEventListener("click", changeText);
+
+myDiv.addEventListener("mouseover", function(){ myDiv2.style.background = "darkkhaki"});// For Hover
+
+function changeText(){
+    myP2.textContent = "According to a Cornell publication, the answer is ~700 pounds."
+};
+    </script>
+</body>
+</html>
